@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<head>
+
+	<title>TheraNotes</title>
+	
+	<link rel="stylesheet" href="style.css">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@500&display=swap" rel="stylesheet">	
+</head>
+
+<body>
+	
+	<div id="app">
+		
+		<div class="frontpage-design" v-if="frontpage == true">
+		<nav class="nav-bar">
+			<li>TheraNotes<li>
+		</nav>
+		
+	
+
+		
+		<!--Registration-->
+
+
+			<div class="card-design" v-if="registration == true">
+				
+
+				<div class="container">
+
+					<div class="card-text">
+						<p>Make your mental health a priority.</p>
+					</div>
+
+					<input required id="firstname" v-model="firstname" placeholder="name">
+					<input type="email" required id="r-email" v-model="remail" placeholder="email">
+					<input required id="r-password" v-model="rpassword" placeholder="password" type="password">
+				</div>
+				
+				<div class="button-set-design">
+					<button class="button-design emphasis" v-on:click="register">register</button>
+					<button class="button-design" v-on:click="changePage('login')">log in</button>
+				</div>
+
+				<button class="exit-button" v-on:click="changePage('switches')">X</button>
+
+				<div class="error-box" v-if="rError == true">
+					<p class="error-text">Looks like you already have an account. Click below to log in.</p>
+				</div>
+
+				<div class="error-box" v-if="success == true">
+					<p class="error-text">Success! Click below to log in.</p>
+				</div>
+
+			</div>
+
+			<!--Login-->
+			<div class="card-design" v-if="login == true" >
+					
+
+					<div class="container">
+						<div class="card-text">
+							<p>Breathe in and enter your details.</p>
+						</div>
+						
+						<input required id="1-email" v-model="lemail" placeholder="email">
+						<input required type="password" id="1-password" v-model="lpassword" placeholder="password">
+					</div>
+
+				<div class="button-set-design">
+					<button class="button-design emphasis"  v-on:click="attemptlogin">log in</button>
+					<button class="button-design" v-on:click="changePage('register')">register</button>
+				</div>
+
+				<button class="exit-button" v-on:click="changePage('switches')">X</button>
+
+
+				<div class="error-box" v-if="displayError == true">
+					<p class="error-text">Wrong information. Please try again.</p>
+				</div>
+
+			
+			</div>
+		<div v-if="switches == true">
+			<h1 id="switch-box-text">Welcome to TheraNotes. Log In or Register to start feeling better.</h1>
+
+			<div id="switch-box">
+				<button v-on:click="changePage('login')">log in</button>
+				<button v-on:click="changePage('register')">register</button>
+			</div>
+
+		</div>
+
+		</div>
+
+
+		<div id="dashboard" v-if="dashboard == true">
+			<nav class="nav-bar">
+				<li id="username">Welcome Back, {{username}}<li>
+				<li id="dash" v-if="create == false"><button  id="dashboard-button" v-on:click="switchDashboardView('create')">Create New Entry</button></li>
+				<li id="create" v-if="create == true"><button id="home-button" v-on:click="switchDashboardView('home')">View Entries</button></li>
+				<li id="logout"><button id="logout-button" v-on:click="logoutUser">Logout</button></li>
+
+			</nav>
+		
+				
+				<div id="display-entries" v-if="create == false"> 
+					<p id="Timeline">Recent Reflections</p>
+					<div id="entry-container">
+
+				
+
+						<div class="therapy-entries" v-for="entry in Recent">
+							<p class="TP">Thought-Pattern: {{entry.thought}}</p>
+							<p class="D">Reframed: {{entry.reframe}}</p>
+							<button class="delete-button" v-on:click="deleteE(entry)">delete</button>
+						</div>
+
+					</div>
+
+					<p id="levels-overtime">The Last Seven Days...</p>
+					<div id="displayLevelGraph"></div>
+					<div id="empty-graph-placeholder" v-if="empty == true"></div>
+
+				</div>
+			
+			<div id="create-entries" v-if="create == true">
+
+				<div id="create-entries-container">
+
+ 
+						<a id="thought-infomation-bubble" target="_blank" href="https://www.verywellmind.com/ten-cognitive-distortions-identified-in-cbt-22412"></a>
+
+
+						<input required type="date" id="date-input" v-model="date" placeholder="date">	
+						<br>					
+						<label for="dropdown-list" id="identify">Identify Your Thought-Pattern:</label>
+						<select required id="dropdown-list" v-model="thought">
+							<option value="" hidden disabled selected> All or Nothing</option>
+							<option value="All or Nothing">All or Nothing</option>
+							<option value="Overgeneralization">Overgeneralization</option>
+							<option value="Mind Reading">Mind Reading</option>
+							<option value="Fortune Telling">Fortune Telling</option>
+							<option value="Labeling">Labeling</option>
+							<option value="Emotional">Emotional Reasoning</option>
+							<option value="Labeling">Should Statements</option>
+							<option value="Magnification">Magnification</option>
+							<option value="Discounting the positive">Discounting the Positive</option>
+							<option value="Mental filters">Mental Filters</option>
+						</select>
+						
+						<textarea required id="discussion-input" v-model="discussion" placeholder="Give more detail about what you are thinking and feeling"></textarea>
+						<textarea required id="reframe-input" v-model="reframe" placeholder="Challenge Your Thought - How Can This Turn Out Okay "></textarea>
+						
+						<br>
+						<label for="anxiety-levels" id="anxiety-scale">On a scale of 1 to 5, how are you feeling?</label>
+						<input required oninput="rangevalue.value=value" type="range" min=1 max=5 id="anxiety-levels" v-model="levels" value=1>
+						<output id="rangevalue">1</output>
+
+
+					<button id="submit-button" v-on:click="createE">Submit Entry</button>
+					
+						
+				</div>
+
+			</div>
+		</div>
+
+
+	
+
+
+		
+	</div>
+
+
+	<footer><a href="https://www.flaticon.com/free-icons/info" title="info icons">Info icons created by Freepik - Flaticon</a></footer>
+	
+	<script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+	<script src="TherapyJavascript.js"></script>
+	<script src="https://d3js.org/d3.v7.min.js"></script>
+
+
+
+</body>
+
+
+
+
+
+</html>

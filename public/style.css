@@ -1,0 +1,581 @@
+body, html {
+	height: 100%;
+	margin: 0;
+	overflow: hidden;
+	
+
+
+}
+
+#app {
+	width: 100%;
+	height: 100%;
+}
+
+#levels-overtime {
+	position: absolute;
+	margin-top: 29%;
+	margin-left: 60%;
+
+
+
+}
+
+/* MAIN PAGE CSS STYLING */
+
+
+.nav-bar {
+	width: 100%;
+	height:5%;
+
+	background-color: #fffdfd;
+	
+
+}
+
+.nav-bar li {
+	
+	display: inline;
+	float: left;
+	text-align: center;
+	padding: 14px 16px;
+
+	color: #000000;
+	text-align: left;
+	font-weight: 700;
+	font-family: 'Nunito', sans-serif;
+}
+
+
+
+
+#switch-box {
+	width: 50px;
+	height: 50px;
+
+	position: absolute;
+	top: 50%;
+	bottom: 50%;
+	left: 50%;
+
+	right: 50%;
+	
+
+
+}
+
+
+#switch-box button {
+	text-align: center;
+
+	height: 25px;
+	width: 100px;
+
+	background-color: transparent;
+	color: #000000;
+
+	border: none;
+	font-weight: 300;
+	font-family: 'Nunito', sans-serif;
+	font-size: 20px;
+
+}
+
+#switch-box-text {
+	background-color: transparent;
+	color: #000000;
+	display: inline;
+	border: none;
+	font-weight: 500;
+	font-family: 'Nunito', sans-serif;
+	font-size: 25px;
+	text-align: center;
+
+	margin: auto;
+
+	left: 30%;
+	right: auto;
+
+	position: absolute;
+
+	top: 35%;
+	bottom:35%;
+}
+
+
+#switch-box button:hover {
+	font-weight: 700;
+}
+
+
+.frontpage-design {
+	height: 100%;
+	
+	background-image: linear-gradient( rgba(255,255,255,0.6), rgba(255,255,255,0.6)), url("/homepage.jpg");
+	
+	height: 100%; 
+
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+
+	
+	
+
+}
+
+.frontpage-design::-webkit-scrollbar {
+	display: none;
+}
+
+
+/* REGISTRATION CSS */ 
+.button-set-design {
+	position: absolute;
+	top: 60%;
+
+
+	right: 50%;
+	left: 50%;
+}
+
+
+
+
+.button-design {
+	text-align: center;
+
+	height: 25px;
+	width: 100px;
+
+
+	border: none;
+	font-weight: 100;
+	font-family: 'Nunito', sans-serif;
+	font-size: large;
+
+	background: transparent;
+	color: #000000;
+
+
+}
+
+.button-design:hover {
+	font-weight: 700;
+	color: #000000;
+}
+
+
+.exit-button {
+	outline: none;
+	border: none;
+	font-weight: 100;
+	font-family: 'Nunito', sans-serif;
+	font-size: larger;
+
+	background: transparent;
+	color: #000000;
+
+
+	position: absolute;
+	top: 0;
+	right: 0;
+
+
+	
+	
+	
+
+}
+
+.exit-button:hover {
+	font-weight: 700;
+	
+}
+
+
+/* CARD DESIGN */
+.card-design {
+	background-color: white;
+
+	height: 100%;
+	width: 50%;
+
+	position: relative;
+	opacity: 60%;
+	animation: cardleft 1s ease-out forwards;
+
+}
+
+.card-text {
+	font-family: 'Nunito', sans-serif;
+	color: #000000;
+	font-weight: bold;	
+}
+
+
+.container {
+	display: flex;
+	flex-direction: column;
+
+	position: relative;
+	top: 15%;
+	bottom: 20%;
+	right: 15%;
+	left: 15%;
+
+
+
+}
+
+.container input {
+	margin-bottom: 5px;
+
+	width: 30%;
+	height: 25%;
+
+	margin-bottom: 5%;
+	
+
+	outline: none;
+
+	font-family: 'Nunito', sans-serif;
+	color: #000000;
+	background: transparent;
+	border-bottom: solid 0.5px #000000 ;
+	border-top: none;
+	border-left: none;
+	border-right: none;
+
+
+	font-size: medium;
+
+
+}
+
+::placeholder {
+	color: #000000;
+	font-weight: bold;
+}
+
+.emphasis {
+	font-weight: bolder;
+}
+
+.emphasis:hover {
+	color: #9E7360;
+}
+
+.error-box {
+	position: absolute;
+
+	top: 52%;
+
+
+	right: 23%;
+	left: 35%;
+
+}
+
+.error-text {
+	font-family: 'Nunito', sans-serif;
+	color: #000000;
+}
+
+/* HOMEPAGE */
+#dashboard {
+	height: 100%;
+	font-family: 'Nunito', sans-serif;
+	color: #000000;
+
+}
+
+#display-entries {
+	background-image: linear-gradient( rgba(255,255,255,0.6), rgba(255,255,255,0.6)), url("/rocks.jpg");
+	
+	height: 100%; 
+
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+#username {
+	font-size: large;
+}
+
+#logout-button {
+	background: transparent;
+	border: none;
+
+}
+
+
+/* ENTRY DISPLAY */ 
+
+
+
+.delete-buttton {
+	background: transparent;
+	border: none;
+}
+#entry-container {
+	background-color: white;
+	width: 33%;
+	height: 45%;
+
+	margin-left: 33%;
+	margin-top: 3%;
+
+	border-radius: 3%;
+	position: absolute;
+}
+
+/* CREATE ENTRY */
+
+#create-entries-container {
+	background-color: white;
+	width: 40%;
+	height: 75%;
+
+	margin-left: 45%;
+	margin-top: 3%;
+
+	border-radius: 3%;
+	position: absolute;
+
+	margin-bottom: 0%;
+
+	
+}
+
+
+#thought-infomation-bubble {
+	background-image: url("/info.png");
+
+	width: 2%;
+	height: 2%;
+
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+
+
+	margin-top: 10%;
+	position: absolute;
+
+	margin-left: 10%;
+	margin-bottom: 5%;
+	
+}
+
+
+.design {
+	display: block;
+}
+
+.design input[type="radio"] {
+	display: none;
+	font-weight: bolder;
+}
+
+
+#create {
+	margin-left: 55%;
+
+}
+
+#dash {
+	margin-left: 55%;
+	
+}
+
+
+
+
+#logout {
+	margin-left: 5%;
+}
+
+
+/* CREATION DESIGN */
+#submit-button {
+	margin-top: 10%;
+	position: absolute;
+	font-weight: bold;
+
+	margin-left: 20%;
+
+
+}
+#anxiety-levels {
+	margin-top: 5%;
+	margin-left: 25%;
+
+	font-size: small;
+}
+
+#rangevalue {
+	
+	margin-left: 50%;
+}
+
+
+
+textarea {
+	width: 60%;
+	height: 15%;
+	resize: none;
+}
+
+#reframe-input {
+	margin-left: 30%;
+	margin-top: 5%;
+	margin-bottom: 10%;
+
+	
+
+
+}
+
+#discussion-input {
+	
+	margin-left: 30%;
+	margin-bottom: 0%;
+	margin-top: 5%;
+
+}
+
+
+::placeholder {
+	font-weight: normal;
+}
+
+#create-entries {
+	background-image: linear-gradient( rgba(255,255,255,0.6), rgba(255,255,255,0.6)), url("/rocks.jpg");
+	height: 100%; 
+
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+
+
+
+
+}
+
+#date-input {
+	margin-left: 10%;
+	margin-top: 5%;
+	margin-bottom: 5%;
+
+	border: none;
+	
+}
+
+#anxiety-scale {
+	font-size: small;
+	margin-left: 30%;
+	
+}
+
+#identify {
+	font-size: small;
+	margin-left: 10%;
+}
+
+#dropdown-list {
+	margin-left: 3%;
+	border: none;
+}
+
+
+
+input[type="range"] {
+    height: 10px;
+    width: 50%;
+  }
+
+input[type="range"]::-webkit-slider-runnable-track {
+    background: linear-gradient(to right, #13d505 0%, #64d700 25%, #faf603 50%, #ed4e0a 75%, #fb0000 100%);
+    border-radius: 7px;
+  }
+
+
+button {
+	border: none;
+	background: transparent;
+}
+
+
+
+
+#displayLevelGraph {
+	position: absolute;
+
+	margin-top: 30%;
+	margin-left: 43%;
+
+
+
+} 
+
+.delete-button {
+	font-size: small;
+	margin-left: 3%;
+}
+
+
+
+.therapy-entries {
+	font-size: small;
+	margin-left: 10%;
+	margin-top: 5%;
+	margin-bottom: 5%;
+
+
+}
+
+#Timeline {
+	position: absolute;
+	margin-left: 60%;
+	margin-bottom: 3%;
+	
+}
+
+#entry-container {
+	background-color: white;
+	width: 40%;
+	height: 50%;
+
+	margin-left: 45%;
+	margin-top: 3%;
+
+	border-radius: 3%;
+	position: absolute;
+
+	margin-bottom: 0%;
+}
+
+/* ANIMATIONS */
+@keyframes cardleft {
+	from {
+		transform: translateX(-100%);
+	}
+	to {
+		transform: translateX(0);
+	}
+	
+}
+
+
+
+
+
+
+
+
+
+
+
+
